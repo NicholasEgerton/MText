@@ -16,9 +16,9 @@ include_directories(include)
 
 set(SOURCES
     src/Source.cpp
- "include/MText.h" "src/MText.cpp")
+ "include/MText.h" "src/MText.cpp" "include/Errors.h" "src/Errors.cpp")
 
-add_executable(MText ${SOURCES})
+add_executable(MText ${SOURCES} "include/Errors.h")
 target_compile_features(MText PRIVATE cxx_std_17)
 target_link_libraries(MText PRIVATE SFML::Graphics)
 
