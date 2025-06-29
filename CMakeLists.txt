@@ -16,7 +16,7 @@ include_directories(include)
 
 set(SOURCES
     src/Source.cpp
-)
+ "include/MText.h" "src/MText.cpp")
 
 add_executable(MText ${SOURCES})
 target_compile_features(MText PRIVATE cxx_std_17)
