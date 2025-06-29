@@ -12,7 +12,7 @@ int main()
         RenderWindow window = RenderWindow(VideoMode({ 1920u, 1080u }), "MTextExample");
 
         //Load the font roboto.
-        const Font roboto("resources/fonts/cambrias.ttc");
+        const Font roboto("resources/fonts/cambria.ttc");
 
         //Create the example MText object.
         MText mText{ roboto, String("hello world"), 30 };
@@ -32,6 +32,8 @@ int main()
 
                 //Clear the window.
                 window.clear();
+
+                window.draw(mText);
 
                 //Display the contents.
                 window.display();
