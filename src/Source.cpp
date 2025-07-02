@@ -16,7 +16,7 @@ int main()
         const Font roboto("resources/fonts/cambria.ttc");
 
         //Create the example MText object.
-        MText mText{ roboto, String("hello world"), 70, Color::White };
+        MText mText{ roboto, String("hello world!\nA new paragraph!\nThis:\tis a tab!\n\tAnd this is an tabbed paragraph!"), 70, Color::White };
 
         try {
             //Loop continously while the window is open.
