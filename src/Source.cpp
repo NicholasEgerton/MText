@@ -10,12 +10,13 @@ int main()
     try {
         //Create a new window.
         RenderWindow window = RenderWindow(VideoMode({ 1920u, 1080u }), "MTextExample");
+        window.setVerticalSyncEnabled(true);
 
         //Load the font roboto.
         const Font roboto("resources/fonts/cambria.ttc");
 
         //Create the example MText object.
-        MText mText{ roboto, String("hello world"), 30 };
+        MText mText{ roboto, String("hello world"), 70, Color::White };
 
         try {
             //Loop continously while the window is open.
