@@ -16,8 +16,21 @@ private:
 
 	sf::VertexArray vertexArray{ sf::PrimitiveType::Triangles };
 
+	struct Symbol {
+		sf::Vector2f position;
+		sf::Color color;
+		const sf::Glyph& glyph;
+	};
+
 public:
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+
+	/// <summary>
+	/// Reconstructs the text and updates the verticies from the current string.
+	/// </summary>
+	void UpdateText();
+
+	void AddSymbolsToVertexArray(const std::vector<Symbol>& symbols);
 
 	/// <summary>
 	/// Very similar to sf::Text::addGlyphQuad(), slightly modified for this class.
@@ -25,9 +38,7 @@ public:
 	/// <param name="position">Position of the glyph in the font texture.</param>
 	/// <param name="color">Color of the glyph.</param>
 	/// <param name="glyph">The glyph to add.</param>
-	void AddGlyphQuad(sf::Vector2f position, sf::Color color, const sf::Glyph& glyph);
-
-	void UpdateVertexArray();
+	void AddSymbolQuad(const Symbol symbol);
 
 	//Getters and Setters
 	
